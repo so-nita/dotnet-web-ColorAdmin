@@ -27,7 +27,7 @@ namespace ColorAdmin
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-        		services.AddMvc(options => options.EnableEndpointRouting = false);  
+        	services.AddMvc(options => options.EnableEndpointRouting = false);  
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
@@ -59,10 +59,11 @@ namespace ColorAdmin
 
             app.UseEndpoints(endpoints =>
             {
-            		endpoints.MapAreaControllerRoute(  
+            	endpoints.MapAreaControllerRoute(  
 										name: "Identity",  
 										areaName: "Identity",  
 										pattern: "Identity/{controller=Home}/{action=Index}");  
+                                        
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Dashboard}/{action=DashboardV3}");
